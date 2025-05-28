@@ -1,0 +1,55 @@
+Create your own variables file
+
+Create _custom-variables.scss in the project folder:
+
+scss
+Copy
+Edit
+// _custom-variables.scss
+
+// Customize Bootstrap variables before importing Bootstrap
+$primary: #ff6347;  // tomato color as primary
+$border-radius: 1rem; // bigger border radius
+
+// You can customize more variables here...
+Modify your custom.scss to import your variables before Bootstrap
+
+scss
+Copy
+Edit
+// custom.scss
+
+// Import custom variables first
+@import "custom-variables";
+
+// Then import Bootstrap source
+@import "node_modules/bootstrap/scss/bootstrap";
+Update your package.json script if needed and re-run:
+
+bash
+Copy
+Edit
+npm run build-css
+Use the generated custom.css in your HTML
+
+Example index.html:
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap Sass Customization</title>
+  <link rel="stylesheet" href="custom.css" />
+</head>
+<body>
+  <button class="btn btn-primary m-5">Custom Primary Button</button>
+  <div class="card m-5 p-3" style="width: 18rem;">
+    <div class="card-body">
+      Custom border radius card.
+    </div>
+  </div>
+</body>
+</html>

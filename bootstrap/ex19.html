@@ -1,0 +1,42 @@
+Initialize npm project
+
+bash
+Copy
+Edit
+mkdir bootstrap-sass-project
+cd bootstrap-sass-project
+npm init -y
+Install Bootstrap and Sass
+
+bash
+Copy
+Edit
+npm install bootstrap sass
+Create your main SCSS file
+
+Create a file named custom.scss:
+
+scss
+Copy
+Edit
+// custom.scss
+// Import Bootstrap's source Sass files
+@import "node_modules/bootstrap/scss/bootstrap";
+Compile SCSS to CSS
+
+Add this to your package.json under "scripts" for easy compiling:
+
+json
+Copy
+Edit
+"scripts": {
+  "build-css": "sass custom.scss custom.css"
+}
+Then run:
+
+bash
+Copy
+Edit
+npm run build-css
+This will generate custom.css with Bootstrap styles.
+
