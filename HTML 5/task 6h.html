@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+
+    form {
+      max-width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #feeDisplay, #charCount, #submitMessage {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <form id="feedbackForm">
+    <h2>Event Feedback</h2>
+
+    <!-- Phone Number Validation -->
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" placeholder="Enter 10-digit number" onblur="validatePhone()">
+
+    <!-- Dropdown and onchange fee display -->
+    <label for="eventSelect">Choose Event</label>
+    <select id="eventSelect" onchange="showFee()">
+      <option value="">-- Select Event --</option>
+      <option value="music">Music Night - ₹100</option>
+      <option value="art">Art Fair - ₹50</option>
+      <option value="sports">Sports Meet - ₹70</option>
+    </select>
+    <div id="feeDisplay"></div>
+
+    <!-- Feedback textarea and keypress tracking -->
+    <label for="feedback">Your Feedback</label>
+    <textarea id="feedback" rows="4" placeholder="Type your feedback..." onkeyup="countCharacters()"></textarea>
+    <div id="charCount">Characters: 0</div>
+
+    <!-- Submit button -->
+    <button type="button" onclick="showConfirmation()">Submit Feedback</button>
+    <div id="submitMessage"></div>
+
+    <!-- Image for double-click enlargement -->
+    <label>Double-click the image to enlarge:</label>
+    <img src="event.jpg" alt="Event" id="eventImage" ondblclick="enlargeImage(this)">
+  </form>
+
+  <script>
+    // Validate phone number
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      const pattern = /^[0-9]{10}$/;
+      if (!pattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        document.getElementById('phone').focus();
+      }
+    }
+
+    // Show fee when event is selected
+    function showFee() {
+      const dropdown = document.getElementById('eventSelect');
+      const feeText = dropdown.options[dropdown.selectedIndex].text;
+      document.getElementById('feeDisplay').textContent = `Selected: ${feeText}`;
+    }
+
+    // Character count in feedback textarea
+    function countCharacters() {
+      const text = document.getElementById('feedback').value;
+      document.getElementById('charCount').textContent = `Characters: ${text.length}`;
+    }
+
+    // Show confirmation on submit
+    function showConfirmation() {
+      document.getElementById('submitMessage').textContent = "✅ Feedback submitted successfully!";
+    }
+
+    // Enlarge image on double-click
+    function enlargeImage(img) {
+      img.style.transform = "scale(1.5)";
+      setTimeout(() => {
+        img.style.transform = "scale(1)";
+      }, 1500); // Shrinks back after 1.5 seconds
+    }
+  </script>
+
+</body>
+</html>

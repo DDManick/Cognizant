@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Links and Lists - Event Portal</title>
+
+  <style>
+    /* Basic Body Style */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f5;
+      padding: 20px;
+    }
+
+    /* Navigation Menu - List without bullets */
+    nav ul {
+      list-style: none; /* removes bullets */
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav li {
+      margin: 5px 0;
+      padding: 8px 12px;
+    }
+
+    nav a:link {
+      color: #00695c;
+      text-decoration: none;
+    }
+
+    nav a:visited {
+      color: #4e342e;
+    }
+
+    nav a:hover {
+      color: white;
+      background-color: #00695c;
+      border-radius: 5px;
+    }
+
+    nav a:active {
+      color: yellow;
+    }
+
+    /* Event Info List */
+    .event-details ul {
+      list-style-type: square;
+      list-style-position: inside;
+      padding-left: 10px;
+    }
+
+    .event-details li {
+      margin: 6px 0;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Local Community Event Portal</h2>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Event Info List -->
+  <div class="event-details">
+    <h3>What to Expect at the Music Festival:</h3>
+    <ul>
+      <li>Live Bands and DJ</li>
+      <li>Food Trucks and Stalls</li>
+      <li>Art & Craft Exhibits</li>
+      <li>Kids Play Area</li>
+    </ul>
+  </div>
+
+</body>
+</html>

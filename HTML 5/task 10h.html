@@ -1,0 +1,78 @@
+1. Use “Inspect Element” to Modify Styles Live
+Open Chrome DevTools:
+
+Right-click the element on your webpage → Select Inspect (or press Ctrl+Shift+I / Cmd+Option+I).
+
+Modify CSS:
+
+In the Elements panel, you’ll see the HTML on the left and CSS styles on the right.
+
+Click on any CSS property and change its value live.
+
+Add new CSS rules by clicking on the empty space in the styles pane.
+
+Benefits:
+
+Instantly see how changes affect layout.
+
+Test fixes without editing your source files.
+
+2. Use the Console Tab to View Logs
+Add console.log() statements in your JavaScript to debug variable values or flow.
+
+Example:
+
+js
+Copy
+Edit
+console.log('Current user:', user);
+console.log('Event coordinates:', coords);
+Open Console tab in DevTools (Ctrl+Shift+J / Cmd+Option+J) to see output and error messages.
+
+Use the console to test JS snippets live by typing directly.
+
+3. Add Breakpoints in JavaScript
+Open Sources tab in DevTools.
+
+Find your JS file in the left panel.
+
+Click the line number where you want to pause execution to set a breakpoint (blue marker appears).
+
+Reload the page to hit breakpoints when code runs.
+
+Inspect variables in Scope section or hover over variables in code.
+
+Step through the code line-by-line using buttons:
+
+Step Over (F10)
+
+Step Into (F11)
+
+Step Out (Shift+F11)
+
+Bonus: Debugging with VS Code
+If you open your project in VS Code, you can debug your JS using the Debugger for Chrome extension:
+
+Install Debugger for Chrome extension.
+
+Create a launch configuration (launch.json) with:
+
+json
+Copy
+Edit
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",  // change to your URL
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
+Set breakpoints in VS Code like in any IDE.
+
+Start debugging, VS Code will open Chrome and connect debugger.
+

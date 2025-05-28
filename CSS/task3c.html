@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selectors Playground</title>
+
+  <!-- Internal CSS demonstrating different selectors -->
+  <style>
+    /* ====================================
+       Universal selector: Reset margin and padding
+    ===================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ====================================
+       ID selector: Style main banner header
+    ===================================== */
+    #mainHeader {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* ====================================
+       Element selector: Style all h2 elements
+    ===================================== */
+    h2 {
+      color: darkblue;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    /* ====================================
+       Class selector: Style event cards
+    ===================================== */
+    .eventCard {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    /* ====================================
+       Grouping selector: Style h3 and p together
+    ===================================== */
+    h3, p {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ID selector -->
+  <div id="mainHeader">
+    <h1>Local Community Event Portal</h1>
+  </div>
+
+  <!-- Element selector -->
+  <h2>Upcoming Events</h2>
+
+  <!-- Class selector -->
+  <div class="eventCard">
+    <h3>Tree Planting Drive</h3>
+    <p>Join us this Sunday at the city park to plant trees and support a greener future.</p>
+  </div>
+
+  <div class="eventCard">
+    <h3>Charity Run</h3>
+    <p>Participate in the 5K charity run to support children's education.</p>
+  </div>
+
+</body>
+</html>

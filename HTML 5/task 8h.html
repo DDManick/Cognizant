@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Event Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #eef2f3;
+    }
+
+    form {
+      background-color: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #status {
+      margin-top: 15px;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <h3>Select Your Preferred Event Type</h3>
+
+    <label for="eventSelect">Event Type:</label>
+    <select id="eventSelect">
+      <option value="">-- Choose an Event --</option>
+      <option value="music">Music Night</option>
+      <option value="art">Art Fair</option>
+      <option value="sports">Sports Meet</option>
+    </select>
+
+    <button type="button" onclick="savePreference()">Save Preference</button>
+    <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+
+    <div id="status"></div>
+  </form>
+
+  <script>
+    // Load saved preference on page load
+    window.onload = function() {
+      const savedEvent = localStorage.getItem("preferredEvent");
+      if (savedEvent) {
+        document.getElementById("eventSelect").value = savedEvent;
+        document.getElementById("status").textContent = `✅ Loaded preference: ${savedEvent}`;
+      }
+    };
+
+    // Save selected event to localStorage
+    function savePreference() {
+      const selected = document.getElementById("eventSelect").value;
+      if (selected) {
+        localStorage.setItem("preferredEvent", selected);
+        sessionStorage.setItem("sessionEvent", selected); // optional session use
+        document.getElementById("status").textContent = `✅ Saved: ${selected}`;
+      } else {
+        document.getElementById("status").textContent = "⚠️ Please select an event first.";
+      }
+    }
+
+    // Clear all preferences
+    function clearPreferences() {
+      localStorage.removeItem("preferredEvent");
+      sessionStorage.clear();
+      document.getElementById("eventSelect").value = "";
+      document.getElementById("status").textContent = "🗑️ Preferences cleared.";
+    }
+  </script>
+
+</body>
+</html>

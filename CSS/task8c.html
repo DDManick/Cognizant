@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Box Model & Layout Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    /* Event Card Box Model Styling */
+    .eventCard {
+      background-color: #fff;
+      border: 2px solid #4CAF50;
+      padding: 20px;
+      margin: 20px auto;
+      width: 60%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    /* Form outline styling */
+    input:focus, select:focus {
+      outline: 3px solid #FF9800;
+    }
+
+    /* Visibility vs Display demo */
+    .hidden-element {
+      visibility: hidden;
+      background-color: #ffeb3b;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .none-element {
+      display: none;
+      background-color: #ffcdd2;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .demo-box {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Local Event Highlight</h2>
+
+  <div class="eventCard">
+    <h3>Summer Coding Camp</h3>
+    <p>Join us for a fun 2-week workshop introducing coding to kids and teens!</p>
+  </div>
+
+  <h3>Register for Event</h3>
+  <form>
+    <label>Name:</label>
+    <input type="text" placeholder="Enter your name" /><br><br>
+
+    <label>Email:</label>
+    <input type="email" placeholder="Enter your email" /><br><br>
+
+    <label>City:</label>
+    <select>
+      <option>Choose City</option>
+      <option>Chennai</option>
+      <option>Coimbatore</option>
+    </select>
+  </form>
+
+  <div class="demo-box">
+    <h3>Visibility vs Display</h3>
+    <p class="hidden-element">This is hidden using visibility: hidden (still takes space)</p>
+    <p class="none-element">This is hidden using display: none (space is removed)</p>
+  </div>
+
+</body>
+</html>

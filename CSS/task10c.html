@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Community Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Flexbox navbar */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #007BFF;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2vw; /* Flexible font size */
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0056b3;
+    }
+
+    /* Main content */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 50vw; /* Responsive width relative to viewport */
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 4vw; /* Responsive font size */
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.8vw;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    /* Media Query for screens smaller than 768px */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+        padding: 10px;
+      }
+
+      nav a {
+        font-size: 4vw; /* Larger font size for smaller screens */
+        padding: 12px;
+      }
+
+      img {
+        width: 90vw; /* Larger image width on small screens */
+      }
+
+      h1 {
+        font-size: 8vw;
+      }
+
+      p {
+        font-size: 4vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Events</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="content">
+    <h1>Welcome to the Local Community Portal</h1>
+    <img src="https://via.placeholder.com/800x400" alt="Community Event" />
+    <p>
+      Our community portal connects you to local events, news, and resources. Whether you are on your phone, tablet, or desktop, you can easily browse upcoming activities and get involved.
+    </p>
+  </div>
+
+</body>
+</html>

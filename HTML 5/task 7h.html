@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    video {
+      display: block;
+      margin: 20px auto;
+      width: 70%;
+      border: 2px solid #555;
+      border-radius: 8px;
+    }
+
+    #statusMessage {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+
+    form {
+      background: white;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, label {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎉 Welcome to the Community Event</h2>
+
+  <!-- Promo Video -->
+  <video id="promoVideo" controls oncanplay="showVideoMessage()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="statusMessage"></div>
+
+  <!-- Simple Form -->
+  <form id="registerForm">
+    <label for="name">Your Name (required)</label>
+    <input type="text" id="name" required placeholder="Enter your name">
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Show message when video is ready to play
+    function showVideoMessage() {
+      document.getElementById("statusMessage").textContent = "🎬 Video ready to play!";
+    }
+
+    // Warn if the user tries to leave the page without submitting the form
+    let formTouched = false;
+
+    document.getElementById("registerForm").addEventListener("input", () => {
+      formTouched = true;
+    });
+
+    window.onbeforeunload = function () {
+      if (formTouched) {
+        return "You have unsaved changes. Are you sure you want to leave this page?";
+      }
+    };
+
+    document.getElementById("registerForm").addEventListener("submit", () => {
+      formTouched = false; // Prevent warning after submitting
+    });
+  </script>
+
+</body>
+</html>
